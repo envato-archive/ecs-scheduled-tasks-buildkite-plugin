@@ -35,13 +35,13 @@ Example: `"my-task"`
 
 The file path to the ECS task definition JSON file.
 
-Example: `"ecs/task.json"`
+Example: `"examples/hello-world.json"`
 
 ### `target-definition`
 
 The file path to the Events rule target definition JSON file.
 
-Example: `"events/target_definition.json"`
+Example: `"examples/ecs-target.json"`
 
 ### `events-rule-name`
 
