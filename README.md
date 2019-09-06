@@ -15,7 +15,7 @@ steps:
     concurrency_group: "my-scheduled-task"
     concurrency: 1
     plugins:
-      - ecs-scheduled-tasks#v1.2.0:
+      - ecs-scheduled-tasks#v0.1.0:
           task-family: "my-task-family"
           task-definition: "examples/hello-world.json"
           events-rule-name: "my-events-rule"
@@ -52,6 +52,8 @@ Example: `"my-events-rule"`
 ### `events-rule-role`
 
 The IAM role used to invoke the targets of the Events rule.
+
+At a minimum, this requires the `ecs:RunTask` permission on your task definition resource, and must be able to be assumed by `events.amazonaws.com`. An example policy for an ECS target can be found [in the AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/iam-identity-based-access-control-cwe.html#target-permissions-cwe).
 
 ### `schedule-expression` (optional)
 
