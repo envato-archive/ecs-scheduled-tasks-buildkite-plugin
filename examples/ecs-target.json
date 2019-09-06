@@ -1,0 +1,18 @@
+{
+  "EcsParameters": {
+      "TaskDefinitionArn": "",
+      "TaskCount": 1,
+      "LaunchType": "FARGATE",
+      "NetworkConfiguration": {
+          "awsvpcConfiguration": {
+              "Subnets": [
+                  "subnet-abcd1234"
+              ],
+              "SecurityGroups": [
+                  "sg-dcba4321"
+              ],
+              "AssignPublicIp": "DISABLED"
+          }
+      }
+  }
+}
