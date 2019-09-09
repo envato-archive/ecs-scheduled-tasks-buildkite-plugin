@@ -1,1 +1,1 @@
-{"Rule":"","EventBusName":"","Targets":[{"Id":"0","Arn":"","RoleArn":"","Input":"","InputPath":"","InputTransformer":{"InputPathsMap":{"KeyName":""},"InputTemplate":""},"KinesisParameters":{"PartitionKeyPath":""},"RunCommandParameters":{"RunCommandTargets":[{"Key":"","Values":[""]}]},"BatchParameters":{"JobDefinition":"","JobName":"","ArrayProperties":{"Size":0},"RetryStrategy":{"Attempts":0}},"SqsParameters":{"MessageGroupId":""}}]}
+{"Rule":"","EventBusName":"","Targets":[{"Id":"0","Arn":"","RoleArn":""}]}
