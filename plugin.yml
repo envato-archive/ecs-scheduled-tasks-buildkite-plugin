@@ -1,0 +1,34 @@
+name: ECS Scheduled Tasks
+description: Deploy scheduled tasks to Amazon ECS
+author: https://github.com/envato
+requirements:
+  - aws
+  - jq
+configuration:
+  properties:
+    task-family:
+      type: string
+    task-definition:
+      type: string
+    task-role:
+      type: string
+    execution-role:
+      type: string
+    events-rule-name:
+      type: string
+    events-rule-description:
+      type: string
+    events-rule-role:
+      type: string
+    events-target-definition:
+      type: string
+    schedule-expression:
+      type: string
+    event-pattern:
+      type: string
+  required:
+    - task-family
+    - task-definition
+    - events-rule-name
+    - events-rule-role
+    - events-target-definition
