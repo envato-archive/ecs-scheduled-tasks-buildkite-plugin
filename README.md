@@ -61,15 +61,7 @@ The [AWS schedule expression](https://docs.aws.amazon.com/AmazonCloudWatch/lates
 
 Example: `"cron(* * * ? * *)"`
 
-You must specify either a `schedule-expression` or `event-pattern` when configuring your scheduled task.
-
-### `event-pattern` (optional)
-
-The [AWS event pattern](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html) to use in the Events rule, defined in a JSON file.
-
-Example: `"examples/event-pattern.json"`
-
-You must specify either a `schedule-expression` or `event-pattern` when configuring your scheduled task.
+You must specify either a `schedule-expression` when configuring your scheduled task.
 
 ### `events-rule-description` (optional)
 
