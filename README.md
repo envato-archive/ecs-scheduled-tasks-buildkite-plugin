@@ -55,13 +55,11 @@ The IAM role used to invoke the targets of the Events rule.
 
 At a minimum, this requires the `ecs:RunTask` permission on your task definition resource, and must be able to be assumed by `events.amazonaws.com`. An example policy for an ECS target can be found [in the AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/iam-identity-based-access-control-cwe.html#target-permissions-cwe).
 
-### `schedule-expression` (optional)
+### `schedule-expression`
 
 The [AWS schedule expression](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html) to use in the Events rule.
 
 Example: `"cron(* * * ? * *)"`
-
-You must specify either a `schedule-expression` when configuring your scheduled task.
 
 ### `events-rule-description` (optional)
 
