@@ -86,7 +86,6 @@ function set_event_target() {
     local task_arn=$2
     local target_definition_template_json=$(cat "${DIR}/../lib/target-definition.json")
 
-    ### Check if the targets exist if the rule exists and if so return
     local current_arn=$(aws events list-targets-by-rule --rule "${rule_name}" --query 'Targets[0].Arn' --output text)
     if [[ $current_arn == "${task_arn}" ]]; then
       echo "Target already set, no action required"
