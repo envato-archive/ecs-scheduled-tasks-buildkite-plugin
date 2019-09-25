@@ -10,15 +10,15 @@ configuration:
       type: string
     task-definition:
       type: string
-    task-role:
+    task-role-arn:
       type: string
-    execution-role:
+    execution-role-arn:
       type: string
     events-rule-name:
       type: string
     events-rule-description:
       type: string
-    events-rule-role:
+    events-rule-role-arn:
       type: string
     events-target-definition:
       type: string
@@ -30,5 +30,5 @@ configuration:
     - task-family
     - task-definition
     - events-rule-name
-    - events-rule-role
+    - events-rule-role-arn
     - events-target-definition
