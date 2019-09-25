@@ -19,7 +19,7 @@ steps:
           task-family: "my-task-family"
           task-definition: "examples/hello-world.json"
           events-rule-name: "my-events-rule"
-          events-rule-role: "arn:aws:iam::123456789012:role/my-events-rule-role"
+          events-rule-role-arn: "arn:aws:iam::123456789012:role/my-events-rule-role"
           events-target-definition: "examples/ecs-target.json"
 ```
 
@@ -49,7 +49,7 @@ The name of the CloudWatch Events rule to create.
 
 Example: `"my-events-rule"`
 
-### `events-rule-role`
+### `events-rule-role-arn`
 
 The IAM role used to invoke the targets of the Events rule.
 
@@ -65,12 +65,12 @@ Example: `"cron(* * * ? * *)"`
 
 A text description for the Events rule.
 
-### `task-role` (optional)
+### `task-role-arn` (optional)
 
 An IAM ECS Task Role to assign to tasks.
 Requires the `iam:PassRole` permission for the ARN specified.
 
-### `execution-role` (optional)
+### `execution-role-arn` (optional)
 
 The Execution Role ARN used by ECS to pull container images and secrets.
 
