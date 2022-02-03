@@ -2,6 +2,8 @@
 
 [![tests](https://github.com/envato/ecs-scheduled-tasks-buildkite-plugin/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/envato/ecs-scheduled-tasks-buildkite-plugin/actions/workflows/tests.yml)
 
+A [Buildkite plugin](https://buildkite.com/docs/agent/v3/plugins) for deploying [Amazon ECS Scheduled Tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html).
+
 * Requires the aws cli tool be installed
 * Registers a new task definition based on a given JSON file ([`register-task-definition`](http://docs.aws.amazon.com/cli/latest/reference/ecs/register-task-definition.html]))
 * Creates a CloudWatch Events rule ([`put-rule`](https://docs.aws.amazon.com/cli/latest/reference/events/put-rule.html))
