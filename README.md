@@ -17,7 +17,7 @@ steps:
     concurrency_group: "my-scheduled-task"
     concurrency: 1
     plugins:
-      - ecs-scheduled-tasks#v0.1.0:
+      - envato/ecs-scheduled-tasks#v0.1.0:
           task-family: "my-task-family"
           task-definition: "examples/hello-world.json"
           events-rule-name: "my-events-rule"

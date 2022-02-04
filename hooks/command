@@ -15,7 +15,8 @@ event_pattern=${BUILDKITE_PLUGIN_ECS_SCHEDULED_TASKS_EVENT_PATTERN:-""}
 target_definition=${BUILDKITE_PLUGIN_ECS_SCHEDULED_TASKS_EVENTS_TARGET_DEFINITION?}
 
 function register_task_definition() {
-  local container_definition_json=$(cat "${task_definition}")
+  local container_definition_json
+  container_definition_json=$(cat "${task_definition}")
 
   register_command="aws ecs register-task-definition \
       --family ${task_family} \
