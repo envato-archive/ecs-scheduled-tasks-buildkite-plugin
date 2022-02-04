@@ -52,9 +52,12 @@ function create_event_rule() {
   local schedule_expression=$4
   local event_pattern=$5
 
-  local json_output=$(aws events describe-rule --name "${rule_name}")
-  local rule_status=$(jq -r '.State' <<< "${json_output}")
-  local current_role=$(jq -r '.RoleArn' <<< "${json_output}")
+  local json_output
+  json_output=$(aws events describe-rule --name "${rule_name}")
+  local rule_status
+  rule_status=$(jq -r '.State' <<< "${json_output}")
+  local current_role
+  current_role=$(jq -r '.RoleArn' <<< "${json_output}")
   if [[ ${rule_status} == "ENABLED" ]] && [[ ${current_role} == "${role_arn}" ]]; then
     return
   fi
@@ -85,9 +88,10 @@ function set_event_target() {
     local ecs_target_definition_json=$(cat "${target_definition}")
     local rule_name=$1
     local task_arn=$2
-    local target_definition_template_json=$(cat "${DIR}/../lib/target-definition.json")
-
-    local current_arn=$(aws events list-targets-by-rule --rule "${rule_name}" --query 'Targets[0].Arn' --output text)
+    local target_definition_template_json
+    target_definition_template_json=$(cat "${DIR}/../lib/target-definition.json")
+    local current_arn
+    current_arn=$(aws events list-targets-by-rule --rule "${rule_name}" --query 'Targets[0].Arn' --output text)
     if [[ $current_arn == "${task_arn}" ]]; then
       echo "Target already set, no action required"
       exit 0
