@@ -99,8 +99,8 @@ function set_event_target() {
     fi
 
     ecs_target_definition_json=$(echo "${ecs_target_definition_json}" | jq --arg TASK_ARN "${task_arn}" '.TaskDefinitionArn=$TASK_ARN')
-    # parsed_target_definition_json=$(jq -s '.[0].Targets[0] + .[1]' <<< "${target_definition_template_json}" <<< "${ecs_target_definition_json}")
-    parsed_target_definition_json=$(jq -s '.${target_definition_template_json.Targets${target_definition_template_json + .${ecs_target_definition_json}')
+    parsed_target_definition_json=$(jq -s '.[0].Targets[0] + .[1]' <<< "${target_definition_template_json}" <<< "${ecs_target_definition_json}")
+    # parsed_target_definition_json=$(jq -s '.${target_definition_template_json.Targets${target_definition_template_json + .${ecs_target_definition_json}')
 
     echo "--- Setting Events rule target"
     aws events put-targets \
