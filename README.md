@@ -1,5 +1,7 @@
 # ECS Scheduled Tasks Buildkite Plugin
 
+[![tests](https://github.com/envato/ecs-scheduled-tasks-buildkite-plugin/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/envato/ecs-scheduled-tasks-buildkite-plugin/actions/workflows/tests.yml)
+
 A [Buildkite plugin](https://buildkite.com/docs/agent/v3/plugins) for deploying [Amazon ECS Scheduled Tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html).
 
 * Requires the aws cli tool be installed
@@ -15,7 +17,7 @@ steps:
     concurrency_group: "my-scheduled-task"
     concurrency: 1
     plugins:
-      - ecs-scheduled-tasks#v0.1.0:
+      - envato/ecs-scheduled-tasks#v0.1.0:
           task-family: "my-task-family"
           task-definition: "examples/hello-world.json"
           events-rule-name: "my-events-rule"
