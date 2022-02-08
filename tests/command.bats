@@ -2,7 +2,7 @@
 
 load '/usr/local/lib/bats/load.bash'
 
-# Uncgomment to enable stub debug output:
+# Uncomment to enable stub debug output:
 # export AWS_STUB_DEBUG=/dev/tty
 # export JQ_STUB_DEBUG=/dev/tty
 
